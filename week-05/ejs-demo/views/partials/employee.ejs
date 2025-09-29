@@ -1,0 +1,12 @@
+<% if (employee.visible) { %>
+    <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.age %></td>
+        <td><%= employee.occupation %></td>
+        <td><%= employee.company %></td>
+    </tr>
+<% } else { %>
+    <tr>
+        <td colspan="4"><%= employee.name %> has hidden their information.</td>
+    </tr>
+<% } %>
