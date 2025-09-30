@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const employeeUtil = require('./modules/employee-util');
 const expressLayouts = require('express-ejs-layouts');
 
 const app = express();
@@ -12,18 +11,12 @@ app.use(expressLayouts);
 
 app.use(express.static(path.join(__dirname, "/public")));
 
-app.get('/', (req, res) => {
-    res.render("home", {
-        employees: employeeUtil.getAllEmployees(),
-        title: "Employee List",
-    });
-});
+// Set up controllers
+const generalController = require("./controllers/generalController");
+const employeeController = require("./controllers/employeeController");
 
-app.get('/about', (req, res) => {
-    res.render("about", {
-        title: "About Us"
-    });
-});
+app.use("/", generalController);
+app.use("/employees", employeeController);
 
 const HTTP_PORT = process.env.PORT || 8080;
 

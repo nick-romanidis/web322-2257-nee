@@ -10,7 +10,7 @@
         </tr>
         <% if (typeof employees !== "undefined" && employees.length > 0) { %>
             <% employees.forEach(employee => { %>
-                <%- include("partials/employee", { employee }) %>
+                <%- include("../partials/employee", { employee }) %>
             <% }); %>
         <% } else { %>
              <tr>
