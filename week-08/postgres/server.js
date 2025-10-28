@@ -14,8 +14,8 @@ app.use(expressLayouts);
 app.use(express.urlencoded({ extended: true }));
 
 // Define the connection to our Postgres instance.
-const sequelize = new sequelizeModule("neondb", "neondb_owner", "npg_6HpgETdnNAi1", {
-    host: "ep-sweet-waterfall-a4vza0b2-pooler.us-east-1.aws.neon.tech",
+const sequelize = new sequelizeModule("database", "username", "password", {
+    host: "host_url",
     dialect: "postgres",
     port: 5432,
     dialectOptions: {
